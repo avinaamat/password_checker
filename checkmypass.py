@@ -16,7 +16,6 @@ def get_password_leaks_count(hashes, hash_to_check):
     for hashing, count in hashes:
         if hashing == hash_to_check:
             return count
-
     return 0
 
 
@@ -35,7 +34,8 @@ def main(args):
             print(f'{password} was found {count} times... you should change your password')
         else:
             print(f'{password} was NOT found, carry on!')
-    return 'done'
+    return 'done!'
 
 
-main(sys.argv[1:])
+if __name__ == '__main__':
+  sys.exit(main(sys.argv[1:]))
